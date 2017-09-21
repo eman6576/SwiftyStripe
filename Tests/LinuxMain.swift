@@ -1,6 +1,6 @@
 import XCTest
-@testable import SwiftStripeTests
+@testable import SwiftyStripeTests
 
 XCTMain([
-    testCase(SwiftStripeTests.allTests),
+    testCase(SwiftyStripeTests.allTests),
 ])
