@@ -1,5 +1,5 @@
 import XCTest
-@testable import SwiftStripe
+@testable import SwiftyStripe
 
 class SwiftStripeTests: XCTestCase {
     func testExample() {
