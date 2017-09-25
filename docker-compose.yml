@@ -1,0 +1,5 @@
+SwiftyStripe:
+  image: ibmcom/swift-ubuntu:latest
+  volumes:
+    - .:/root/SwiftyStripe
+  command: bash -c "cd /root/SwiftyStripe && swift build && swift test"
