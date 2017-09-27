@@ -22,5 +22,30 @@
 
 import Foundation
 
-/// A class that represents a base model.
-class StripeModel: Codable {}
+/// A struct that represents a network error that can occur.
+public struct NetworkError: Error {
+    
+    // MARK: - Public Instance Attributes
+    
+    /// Respresents the error code of a network request.
+    public let errorCode: Int
+    
+    /// Represents the description of the error.
+    public let errorDescription: String
+}
+
+
+// MARK: - Network Errors
+extension NetworkError {
+    
+    /// Represents when retrieving the metadata for a request failed.
+    static var metadataError: NetworkError {
+        return NetworkError(errorCode: 1001,
+                            errorDescription: "Could not determine the metadata from request")
+    }
+    
+    /// Represents when parsing a response failed.
+    static var parseError: NetworkError {
+        return NetworkError(errorCode: 1002, errorDescription: "Could not parse given response from request")
+    }
+}
