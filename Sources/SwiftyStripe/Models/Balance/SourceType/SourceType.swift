@@ -22,5 +22,25 @@
 
 import Foundation
 
-/// A class that represents a base model.
-class StripeModel: Codable {}
+/// A class that represents the type of source being used for an associated `BalanceCurrency`.
+public final class SourceType: Codable {
+
+    // MARK: - Public Instance Attributes
+
+    /// The card number for a credit card being used.
+    public let cardNumber: Int
+
+    /// The bank account number associated with a credit card.
+    public let bankAccountNumber: Int?
+
+    /// The Bitcoin reciever being used.
+    public let bitcoinReceiver: Int?
+
+
+    // MARK: - CodingKeys
+    enum CodingKeys: String, CodingKey {
+        case cardNumber = "card"
+        case bankAccountNumber = "bank_account"
+        case bitcoinReceiver = "bitcoin_receiver"
+    }
+}
